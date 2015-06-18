@@ -31,7 +31,7 @@ class RSS
 		foreach ( $XML->item as $item ) {
 			$link 	= $item->link."";
 			$id		= $this->getNewsIdFromNewsUrl($link);
-			var_dump($id);
+			$id		= $id."";
 			$filter = array(
 					'newsId' => $id
 			);
