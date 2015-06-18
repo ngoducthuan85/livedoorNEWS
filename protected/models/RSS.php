@@ -51,10 +51,11 @@ class RSS
 				$news['guid'] 		= $item->guid."";
 
 				// Analyze HTML to achieve more information
-				$html = file_get_html($link );
-				$news['imageUrl']	= $this->getImageUrlFromHTML($html);
-				$news['keywords']	= $this->getKeywordsFromNewsUrl($link);
-				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
+			
+// 				$html = file_get_html($link );
+// 				$news['imageUrl']	= $this->getImageUrlFromHTML($html);
+// 				$news['keywords']	= $this->getKeywordsFromNewsUrl($link);
+// 				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
 				
 				var_dump($news);
 				$collection->insert($news);
@@ -77,7 +78,7 @@ class RSS
 
 	/**
 	 * 
-	 * @param string $link
+	 * @param string $html
 	 * @return URL of the image in the article
 	 */
 	public function getImageUrlFromHTML($html)
@@ -91,6 +92,11 @@ class RSS
 		return null;
 	}
 	
+	/**
+	 * 
+	 * @param string $link
+	 * @return List of keywords
+	 */
 	public function getKeywordsFromNewsUrl($link)
 	{
 		$tags = get_meta_tags($link);
