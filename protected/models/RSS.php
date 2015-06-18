@@ -34,7 +34,8 @@ class RSS
 			$filter = array(
 					'id'=>$id
 			);
-			$findNews = $collection.findOne($filter);
+			//$findNews = $collection.findOne($filter);
+			$findNews = null;
 			if ($findNews)
 			{
 				$news				= array();
