@@ -39,6 +39,7 @@ class RSS
 			*/
 			//$findNews = $collection->findOne($filter);
 			$findNews = $collection->findOne(array('newsId' => $id), array('_id' => 0));
+			$news	= array();
 			if ($findNews)
 			{
 				$news = $findNews;
