@@ -19,19 +19,33 @@ class RSS
  	*/
 	function __construct($rssPath)
 	{
+		$m          = new Mongo('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
+		$db         = $m->selectDB('livedoor');
+		$collection = $db->selectCollection('news');
+		
 		$XML = simplexml_load_file ( $rssPath );
 		$XML = $XML->channel;
 		$this->title = $XML->title;
 		
 		$this->listNews = array();
-		foreach ( $XML->item as $news ) {
-			$title 			= $news->title;
-			$link 			= $news->link;
-			$description 	= $news->description;
-			$mobile 		= $news->mobile;
-			$pubDate 		= $news->pubDate;
-			$guid 			= $news->guid;
-			array_push($this->listNews, new News($title, $link, $description, $mobile, $pubDate, $guid));
+		foreach ( $XML->item as $item ) {
+			$link 	= $item->link;
+			$id		= $this->getNewsIdFromNewsUrl($link);
+			$filter = array(
+					'id'=>$id
+			);
+			$findNews = $db->find($filter);
+			var_dump($findNews);
+			
+			$news				= array();
+			$news['title'] 		= $item->title;
+			$news['link']		= $item->link;
+			$news['shortDesc'] 	= $item->description;
+			$news['mobile'] 	= $item->mobile;
+			$news['pubDate'] 	= $item->pubDate;
+			$news['guid'] 		= $item->guid;
+			
+			array_push($this->listNews, $news);
 		}
 	}
 	
@@ -40,13 +54,34 @@ class RSS
 	 * @param string $link
 	 * @return ID of the article
 	 */
-	public function getId($link)
+	public function getNewsIdFromNewsUrl($link)
 	{
 		$id = substr($link, -9, 8);
 		return $id;
 	}
+
+	public function selectNewsFromDatabase($id)
+	{
+		$m          = new Mongo('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
+		$db         = $m->selectDB('livedoor');
+		$collection = $db->selectCollection('news');
+		$filter = array(
+				'id'=>$id
+		);
+		$news     = $db->find($filter);
+		return $news;
+	}
 	
-	public function getImageUrl($link)
+	public function inserNewsToDatabase($array)
+	{
+		$m          = new Mongo('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
+		$db         = $m->selectDB('livedoor');
+		$collection = $db->selectCollection('news');
+		$news     = $db->insert($array);
+		return $news;
+	}
+	
+	public function getImageUrlFromNewsUrl($link)
 	{
 		$html = file_get_html($link );
 		preg_match('/<meta property="og:image" content="(.*?)" \/>/', $html, $matches);
@@ -58,7 +93,7 @@ class RSS
 		return null;
 	}
 	
-	public function getKeywords($link)
+	public function getKeywordsFromNewsUrl($link)
 	{
 		$tags = get_meta_tags($link);
 		$keywords = $tags['news_keywords'];
