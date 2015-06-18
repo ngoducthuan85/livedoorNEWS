@@ -19,7 +19,7 @@ class RSS
  	*/
 	function __construct($rssPath)
 	{
-		$m          = new MongoClient(); // connect
+		$m          = new MongoClient('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
 		$db         = $m->selectDB('livedoor');
 		$collection = $db->selectCollection('news');
 		
