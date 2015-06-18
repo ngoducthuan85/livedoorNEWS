@@ -35,7 +35,11 @@ class RSS
 					'id'=>$id
 			);
 			$findNews = $db.news.findOne($filter);
-			if (!$findNews)
+			if ($findNews)
+			{
+				print_r(tojson($findNews));
+			}
+			else
 			{ 			
 				$news				= array();
 				$news['id'] 		= $id;
