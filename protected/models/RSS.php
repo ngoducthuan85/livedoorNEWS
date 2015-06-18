@@ -32,7 +32,7 @@ class RSS
 			$link 	= $item->link."";
 			$id		= $this->getNewsIdFromNewsUrl($link);
 			$filter = array(
-					'newsId' => 10247366
+					'newsId' => "10247366"
 			);
 			$findNews = $collection->findOne($filter);
 			if ($findNews)
