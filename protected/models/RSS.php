@@ -35,7 +35,6 @@ class RSS
 					'id' => $id
 			);
 			$findNews = $collection->findOne($filter);
-			$findNews=null;
 			if ($findNews)
 			{
 				$news				= array();
@@ -57,6 +56,8 @@ class RSS
 				$news['mobile'] 	= $item->mobile;
 				$news['pubDate'] 	= $item->pubDate;
 				$news['guid'] 		= $item->guid;
+				$collection->insert($news);
+				break;
 			}
 			array_push($this->listNews, $news);
 		}
