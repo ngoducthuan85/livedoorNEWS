@@ -57,7 +57,7 @@ class RSS
 // 				$news['keywords']	= $this->getKeywordsFromNewsUrl($link);
  				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
 				
-				var_dump($news);
+				//var_dump($news);
 				$collection->insert($news);
 				break;
 			}
