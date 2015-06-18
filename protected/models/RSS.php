@@ -49,6 +49,13 @@ class RSS
 				$news['mobile'] 	= $item->mobile."";
 				$news['pubDate'] 	= $item->pubDate."";
 				$news['guid'] 		= $item->guid."";
+
+				// Analyze HTML to achieve more information
+				$html = file_get_html($link );
+				$news['imageUrl']	= $this->getImageUrlFromHTML($html);
+				$news['keywords']	= $this->getKeywordsFromNewsUrl($link);
+				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
+				
 				var_dump($news);
 				$collection->insert($news);
 				break;
@@ -68,30 +75,13 @@ class RSS
 		return $id;
 	}
 
-	public function selectNewsFromDatabase($id)
+	/**
+	 * 
+	 * @param string $link
+	 * @return URL of the image in the article
+	 */
+	public function getImageUrlFromHTML($html)
 	{
-		$m          = new Mongo('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
-		$db         = $m->selectDB('livedoor');
-		$collection = $db->selectCollection('news');
-		$filter = array(
-				'id'=>$id
-		);
-		$news     = $db->find($filter);
-		return $news;
-	}
-	
-	public function inserNewsToDatabase($array)
-	{
-		$m          = new Mongo('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
-		$db         = $m->selectDB('livedoor');
-		$collection = $db->selectCollection('news');
-		$news     = $db->insert($array);
-		return $news;
-	}
-	
-	public function getImageUrlFromNewsUrl($link)
-	{
-		$html = file_get_html($link );
 		preg_match('/<meta property="og:image" content="(.*?)" \/>/', $html, $matches);
 		foreach ($matches as $url)
 		{
@@ -106,6 +96,11 @@ class RSS
 		$tags = get_meta_tags($link);
 		$keywords = $tags['news_keywords'];
 		return $keywords;
+	}
+	
+	public function getRelatedPostsFrom($html, $keywords)
+	{
+		return array();
 	}
 	
 	/**
