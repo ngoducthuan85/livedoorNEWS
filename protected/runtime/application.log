@@ -1152,3 +1152,114 @@ Stack trace:
 #7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
 #8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
 REQUEST_URI=/livedoorNEWS/site/topics/category/ent/
+2015/06/18 08:56:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "article".' in /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(270): CController->missingAction('article')
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): CController->run('article')
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController('site/article')
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/livedoorNEWS/site/article/10244286
+HTTP_REFERER=http://localhost/livedoorNEWS/site/topics/category/dom/
+---
+2015/06/18 08:57:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "article".' in /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(270): CController->missingAction('article')
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): CController->run('article')
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController('site/article')
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/livedoorNEWS/site/article/10244286
+HTTP_REFERER=http://localhost/livedoorNEWS/site/topics/category/dom/
+---
+2015/06/18 08:57:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "article".' in /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(270): CController->missingAction('article')
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): CController->run('article')
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController('site/article')
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/livedoorNEWS/site/article/10244286
+HTTP_REFERER=http://localhost/livedoorNEWS/site/topics/category/dom/
+---
+2015/06/18 08:57:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "article".' in /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(270): CController->missingAction('article')
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): CController->run('article')
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController('site/article')
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/livedoorNEWS/site/article/10244286
+HTTP_REFERER=http://localhost/livedoorNEWS/site/topics/category/dom/
+---
+2015/06/18 08:57:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "article".' in /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(270): CController->missingAction('article')
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): CController->run('article')
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController('site/article')
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/livedoorNEWS/site/article/10244286
+HTTP_REFERER=http://localhost/livedoorNEWS/site/topics/category/dom/
+---
+2015/06/18 08:57:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "article".' in /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(270): CController->missingAction('article')
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): CController->run('article')
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController('site/article')
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/livedoorNEWS/site/article/10246045
+HTTP_REFERER=http://localhost/livedoorNEWS/
+---
+2015/06/18 09:57:17 [error] [php] Undefined variable: RSS (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php:94)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/article/detail/10246722
+2015/06/18 09:57:22 [error] [php] Undefined variable: RSS (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php:94)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/article/detail/10246278
+2015/06/18 10:19:26 [error] [php] Undefined variable: RSS (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php:94)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/article/detail/
+2015/06/18 10:19:29 [error] [php] Undefined variable: RSS (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php:94)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/article/detail/
+2015/06/18 10:19:30 [error] [php] Undefined variable: RSS (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php:94)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/article/detail/

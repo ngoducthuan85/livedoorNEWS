@@ -98,6 +98,7 @@ return array(
 		*/
 		'RSSroot'=>'http://news.livedoor.com/topics/rss/',
 		'RSSsummary'=>'http://news.livedoor.com/rss/summary/',
+		'articlePath' => 'http://news.livedoor.com/article/detail/',
 		'main'=>'top',
 		'domestic'=>'dom',
 		'world'=>'int',

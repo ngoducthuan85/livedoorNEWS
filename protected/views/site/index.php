@@ -49,12 +49,10 @@
           <ul class="articleList">
           	<?php foreach ($listNews as $news):?>
 			<li class="hasImg">
-			  <a href="<?php echo $news->link; ?>"">
-			  	<!-- 
+			  <a href="<?php echo Yii::app()->request->baseUrl . "/site/article/detail/" . $news->id; ?>">
 			      <p class="articleListImg">
-			      	<img src="http://sl.news.livedoor.com/3690877e12efc5edf49ddfc3b9774ea76b8c01e3/small_light(p=S80,dx=0,dy=0)/http://image.news.livedoor.com/newsimage/0/e/0ecc2_648_08f96503-cm.jpg" alt="　開会予定時刻を過ぎても始まらない衆院平和安全法制特別委＝１７日午前" onmousedown="return false;" onselectstart="return false;" oncontextmenu="return false;" galleryimg="no">
+			      	<img src="<?php echo $news->imageUrl; ?>" alt="" onmousedown="return false;" onselectstart="return false;" oncontextmenu="return false;" galleryimg="no">
 			      </p>
-			     -->
 			    <div class="articleListBody">
 			      <h3 class="articleListTtl"><?php echo $news->title;?></h3>
 			        <p class="articleListSummary"><?php echo $news->shortDesc;?></p>
