@@ -1,50 +1,41 @@
+<?php if ($category):?>
+<a href=""><?php echo $category?></a>
+<?php endif;?>
 <div id="content">
   <div class="contentInner">
     <div id="nav">
       <div class="navInner">
         <nav style="position: static; top: auto; bottom: auto; left: auto;" id="globalNav">
           <ul>
-            <li>
-              <div class="parent"><a href="http://news.livedoor.com/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/トップ']);">トップ</a></div>
-            </li>
             <li class="selected">
-              <div class="parent"><a href="http://news.livedoor.com/topics/category/main/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/主要']);">主要</a></div>
+              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['main'] ?>/">主要</a></div>
             </li>
             <li>
-              <div class="parent"><a href="http://news.livedoor.com/topics/category/dom/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/国内']);">国内</a></div>
+              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['domestic'] ?>/">国内</a></div>
             </li>
             <li>
-              <div class="parent"><a href="http://news.livedoor.com/topics/category/world/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/海外']);">海外</a></div>
+              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['world'] ?>/">海外</a></div>
             </li>
             <li>
-              <div class="parent"><a href="http://news.livedoor.com/topics/category/eco/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/IT 経済']);">IT 経済</a></div>
+              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['economics'] ?>/">IT 経済</a></div>
             </li>
             <li>
-              <div class="parent"><a href="http://news.livedoor.com/topics/category/ent/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/芸能']);">芸能</a></div>
+              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['entertainment'] ?>/">芸能</a></div>
             </li>
             <li>
-              <div class="parent"><a href="http://news.livedoor.com/topics/category/sports/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/スポーツ']);">スポーツ</a></div>
+              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['sports'] ?>/">スポーツ</a></div>
             </li>
             <li>
-              <div class="parent"><a href="http://news.livedoor.com/article/category/52/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/映画']);">映画</a></div>
+              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['movie'] ?>/">映画</a></div>
             </li>
             <li>
-              <div class="parent"><a href="http://news.livedoor.com/topics/category/gourmet/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/グルメ']);">グルメ</a></div>
+              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['gourmet'] ?>/">グルメ</a></div>
             </li>
             <li>
-              <div class="parent"><a href="http://news.livedoor.com/topics/category/love/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/女子']);">女子</a></div>
+              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['women'] ?>/">女子</a></div>
             </li>
             <li>
-              <div class="parent"><a href="http://news.livedoor.com/topics/category/trend/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/トレンド']);">トレンド</a></div>
-            </li>
-            <li class="navSeparate">
-              <div class="parent"><a href="http://news.livedoor.com/straight_news/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/今日のできごと']);">今日のできごと</a></div>
-            </li>
-            <li>
-              <div class="parent"><a href="http://news.livedoor.com/ranking/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/ランキング']);">ランキング</a></div>
-            </li>
-            <li>
-              <div class="parent"><a href="http://news.livedoor.com/social_reaction/" onclick="_gaq.push(['_trackEvent', 'ニュース', '左カラム', '一段目/話題のニュース']);">話題のニュース</a></div>
+              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['trend'] ?>/">トレンド</a></div>
             </li>
           </ul>
         </nav>

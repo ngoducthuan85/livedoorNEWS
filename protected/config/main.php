@@ -85,26 +85,27 @@ return array(
 		// this is used in contact page
 		//'adminEmail'=>'webmaster@example.com',
 		/*
-		主要：http://news.livedoor.com/topics/rss/top.xml 
-		国内：http://news.livedoor.com/topics/rss/dom.xml 
-		海外：http://news.livedoor.com/topics/rss/int.xml 
-		IT 経済：http://news.livedoor.com/topics/rss/eco.xml 
-		芸能：http://news.livedoor.com/topics/rss/ent.xml 
-		スポーツ：http://news.livedoor.com/topics/rss/spo.xml 
+		主要：top.xml 
+		国内：dom.xml 
+		海外：int.xml 
+		IT 経済：eco.xml 
+		芸能：ent.xml 
+		スポーツ：spo.xml 
 		映画：http://news.livedoor.com/rss/summary/52.xml 
-		グルメ：http://news.livedoor.com/topics/rss/gourmet.xml 
-		女子：http://news.livedoor.com/topics/rss/love.xml 
-		トレンド：http://news.livedoor.com/topics/rss/trend.xml 
+		グルメ：gourmet.xml 
+		女子：love.xml 
+		トレンド：trend.xml 
 		*/
-		'top'=>'http://news.livedoor.com/topics/rss/top.xml',
-		'domestic'=>'http://news.livedoor.com/topics/rss/dom.xml',
-		'world'=>'http://news.livedoor.com/topics/rss/int.xml',
-		'economics'=>'http://news.livedoor.com/topics/rss/.xml',
-		'entertainment'=>'http://news.livedoor.com/topics/rss/.xml',
-		'sports'=>'http://news.livedoor.com/topics/rss/.xml',
-		'movie'=>'http://news.livedoor.com/topics/rss/.xml',
-		'gourmet'=>'http://news.livedoor.com/topics/rss/.xml',
-		'women'=>'http://news.livedoor.com/topics/rss/love.xml',
-		'trend'=>'http://news.livedoor.com/topics/rss/trend.xml',
+		'RSSroot'=>'http://news.livedoor.com/topics/rss/',
+		'main'=>'top',
+		'domestic'=>'dom',
+		'world'=>'int',
+		'economics'=>'eco',
+		'entertainment'=>'ent',
+		'sports'=>'spo',
+		'movie'=>'52',
+		'gourmet'=>'gourmet',
+		'women'=>'love',
+		'trend'=>'100',
 		),
 );

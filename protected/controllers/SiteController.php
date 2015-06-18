@@ -29,9 +29,24 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		//$category=null;
+		$category=Yii::app()->params['main'];
+		if(isset($_GET['category']))
+		{
+			$category=Yii::app()->params['RSSroot'].$_GET['category'].".xml";
+		}
+		$this->render('index', array('category'=>$category));
 	}
 
+	public function actionTopics()
+	{
+		$category=null;
+		if(isset($_GET['category']))
+		{
+			$category=Yii::app()->params['RSSroot'].$_GET['category'].".xml";
+		}
+		$this->render('index', array('category'=>$category));
+	}
 	/**
 	 * This is the action to handle external exceptions.
 	 */
