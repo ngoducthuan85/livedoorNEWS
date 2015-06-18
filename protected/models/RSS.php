@@ -51,7 +51,7 @@ class RSS
  				$news['keywords']	= $this->getKeywordsFromHTML($html);
  				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
 				
-				//var_dump($news);
+				var_dump($news);
 				//$collection->insert($news);
 				array_push($this->listNews, $news);
 				break;
@@ -103,7 +103,7 @@ class RSS
 				array_push($this->listNews, $news);
 				break;
 			}
-			array_push($this->listNews, $news);
+			//array_push($this->listNews, $news);
 		}
 	}
 	/**
@@ -126,7 +126,6 @@ class RSS
 	{
 		// <meta property="og:image" content="http://image.news.livedoor.com/newsimage/2/e/2ee22_293_9af5057d_a72bfd6f.jpg">
 		preg_match('/<meta property="og:image" content="(.*?)">/', $html, $matches);
-		var_dump($matches);
 		if ($matches)
 			if (count($matches) > 1)
 				return $matches[1];
@@ -142,7 +141,6 @@ class RSS
 	{
 		// <meta name="news_keywords" content="社会,トヨタの女性役員逮捕,密輸,麻薬,厚生労働省,トヨタ自動車,国内の事件・事故,ニュース">
 		preg_match('/<meta name="news_keywords" content="(.*?)">/', $html, $matches);
-		var_dump($matches);
 		if ($matches)
 			if (count($matches) > 1)
 				return $matches[1];
