@@ -27,9 +27,7 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		//$category=null;
+		$this->layout = "main";
 		$rssPath = Yii::app()->params['RSSroot'] . Yii::app()->params['main'] . ".xml";
 		
 		if(isset($_GET['category']))
@@ -87,11 +85,15 @@ class SiteController extends Controller
 	 */
 	public function actionArticle()
 	{
+		$this->layout="main2";
 		$title = "";
 		$description = "";
 		if(isset($_GET['detail']))
 		{
-
+			$originalUrl 	= Yii::app()->params['articlePath'] . $_GET['detail'];
+			$arr 			= RSS::getTitleAndDescriptionFromUrl($originalUrl);
+			$title 			= $arr['title'];
+			$description 	= $arr['description'];
 		}
 		$this->render('article', array('title' => $title, 'description' => $description));
 	}

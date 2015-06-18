@@ -14,10 +14,10 @@ class RSS
 	public $title;
 	
 	/**
- 	* 
+ 	* Rename this function to "__construct" to run without using database
  	* @param string $rssPath
  	*/
-	function test($rssPath)
+	function noDBconstruct($rssPath)
 	{
 		$XML = simplexml_load_file ( $rssPath );
 		$XML = $XML->channel;
@@ -28,38 +28,28 @@ class RSS
 			$link 	= $item->link."";
 			$id		= $this->getNewsIdFromNewsUrl($link);
 			$news	= array();
-			$findNews = null;
+			$news['newsId'] 	= $id;
+			$news['title'] 		= $item->title."";
+			$news['link']		= $link;
+			$news['shortDesc'] 	= $item->description."";
+			$news['mobile'] 	= $item->mobile."";
+			$news['pubDate'] 	= $item->pubDate."";
+			$news['guid'] 		= $item->guid."";
 
-			if ($findNews)
-			{
-				//$news = $findNews;
-			}
-			else
-			{ 						
-				$news['newsId'] 	= $id;
-				$news['title'] 		= $item->title."";
-				$news['link']		= $link;
-				$news['shortDesc'] 	= $item->description."";
-				$news['mobile'] 	= $item->mobile."";
-				$news['pubDate'] 	= $item->pubDate."";
-				$news['guid'] 		= $item->guid."";
-
-				// Analyze HTML to achieve more information
-			
- 				$html = file_get_html($link );
- 				$news['imageUrl']	= $this->getImageUrlFromHTML($html);
- 				$news['keywords']	= $this->getKeywordsFromHTML($html);
- 				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
-				
-				var_dump($news);
-				//$collection->insert($news);
-				array_push($this->listNews, $news);
-				break;
-			}
-			//array_push($this->listNews, $news);
+			// Analyze HTML to achieve more information
+		
+ 			$html = file_get_html($link );
+ 			$news['imageUrl']	= $this->getImageUrlFromHTML($html);
+ 			$news['keywords']	= $this->getKeywordsFromHTML($html);
+ 			$news['relatedPosts']= $this->getRelatedPostsFromHTMLandKeywords($html, $news['keywords']);
+			array_push($this->listNews, $news);
 		}
 	}
 	
+	/**
+	 * Rename this function to "__construct" to run using database (MongoDB)
+	 * @param string $rssPath
+	 */
 	function __construct($rssPath)
 	{
 		$m          = new MongoClient('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
@@ -144,7 +134,6 @@ class RSS
 		return ""; 
 	}
 	
-	
 	/**
 	 * Find the related post keywords of the articles.
 	 * If any article already have some related posts from outside, use them instead of finding in the database
@@ -157,4 +146,37 @@ class RSS
 		return array();
 	}
 
+	/**
+	 *
+	 * @param string $html
+	 * @return main content of the article
+	 */
+	public static function getLongDescFromHTML($html)
+	{
+		return $html->find('div.articleBody', 0);
+	}
+
+	/**
+	 *
+	 * @param string $html
+	 * @return title of the article
+	 */
+	public static function getTitleFromHTML($html)
+	{
+		return $html->find('h1', 0)->innertext;
+	}
+	
+	/**
+	 * Find title and description of an article
+	 * @param string $url
+	 * @return title and description of the article
+	 */
+	public static function getTitleAndDescriptionFromUrl($url)
+	{
+		$html = file_get_html($url);
+		return array(
+				'title' => RSS::getTitleFromHTML($html),
+				'description' => RSS::getLongDescFromHTML($html)
+		);
+	}
 }

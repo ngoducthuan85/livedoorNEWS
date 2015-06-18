@@ -2077,3 +2077,14 @@ Stack trace:
 #10 {main}
 REQUEST_URI=/livedoorNEWS/
 ---
+2015/06/19 00:44:50 [error] [php] Undefined variable: s (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php:167)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionArticle()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/article/detail/10248050
