@@ -57,7 +57,7 @@ class RSS
 // 				$news['keywords']	= $this->getKeywordsFromNewsUrl($link);
  				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
 				
-				//var_dump($news);
+				var_dump($news);
 				$collection->insert($news);
 				break;
 			}
@@ -84,6 +84,8 @@ class RSS
 	public function getImageUrlFromHTML($html)
 	{
 		preg_match('/<meta property="og:image" content="(.*?)" \/>/', $html, $matches);
+		return $this->standardizeddUrl($matches[1]);
+		/*
 		echo $matches;
 		foreach ($matches as $url)
 		{
@@ -92,6 +94,7 @@ class RSS
 				return $this->standardizeddUrl($url);
 		}
 		return null;
+		*/
 	}
 	
 	/**
