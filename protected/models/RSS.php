@@ -25,11 +25,11 @@ class RSS
 		
 		$XML = simplexml_load_file ( $rssPath );
 		$XML = $XML->channel;
-		$this->title = $XML->title-->__toString();
+		$this->title = $XML->title-->toString();
 		
 		$this->listNews = array();
 		foreach ( $XML->item as $item ) {
-			$link 	= $item->link->__toString();;
+			$link 	= $item->link->toString();
 			$id		= $this->getNewsIdFromNewsUrl($link);
 			$filter = array(
 					'id' => $id
@@ -42,12 +42,12 @@ class RSS
 			else
 			{ 						
 				$news['newsId'] 	= $id;
-				$news['title'] 		= $item->title->__toString();
+				$news['title'] 		= $item->title->toString();
 				$news['link']		= $link;
-				$news['shortDesc'] 	= $item->description->__toString();;
-				$news['mobile'] 	= $item->mobile->__toString();;
-				$news['pubDate'] 	= $item->pubDate->__toString();;
-				$news['guid'] 		= $item->guid->__toString();;
+				$news['shortDesc'] 	= $item->description->toString();
+				$news['mobile'] 	= $item->mobile->toString();
+				$news['pubDate'] 	= $item->pubDate->toString();
+				$news['guid'] 		= $item->guid->toString();
 				var_dump($news);
 				$collection->insert($news);
 				break;
