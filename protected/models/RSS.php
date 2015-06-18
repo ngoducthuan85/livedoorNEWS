@@ -123,7 +123,8 @@ class RSS
 	 */
 	public function standardizeddUrl($url)
 	{
-		if (substr($url, -2) == '">')
-			return substr($ur, 0, -2);
+		if (strcmp(substr($url, -2), '">'))
+			$url = substr($ur, 0, -2);
+		return $url;
 	}
 }
