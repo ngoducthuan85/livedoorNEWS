@@ -17,12 +17,8 @@ class RSS
  	* 
  	* @param string $rssPath
  	*/
-	function __construct($rssPath)
+	function test($rssPath)
 	{
-		$m          = new MongoClient('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
-		$db         = $m->livedoor;
-		$collection = $db->news;
-		
 		$XML = simplexml_load_file ( $rssPath );
 		$XML = $XML->channel;
 		$this->title = $XML->title."";
@@ -31,11 +27,12 @@ class RSS
 		foreach ( $XML->item as $item ) {
 			$link 	= $item->link."";
 			$id		= $this->getNewsIdFromNewsUrl($link);
-			$findNews = $collection->findOne(array('newsId' => $id), array('_id' => 0));
 			$news	= array();
+			$findNews = null;
+
 			if ($findNews)
 			{
-				$news = $findNews;
+				//$news = $findNews;
 			}
 			else
 			{ 						
@@ -52,8 +49,55 @@ class RSS
  				$html = file_get_html($link );
  				$news['imageUrl']	= $this->getImageUrlFromHTML($html);
  				$news['keywords']	= $this->getKeywordsFromHTML($html);
- 				//$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
+ 				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
 				
+				//var_dump($news);
+				//$collection->insert($news);
+				array_push($this->listNews, $news);
+				break;
+			}
+			//array_push($this->listNews, $news);
+		}
+	}
+	
+	function __construct($rssPath)
+	{
+		$m          = new MongoClient('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
+		$db         = $m->livedoor;
+		$collection = $db->news;
+	
+		$XML = simplexml_load_file ( $rssPath );
+		$XML = $XML->channel;
+		$this->title = $XML->title."";
+	
+		$this->listNews = array();
+		foreach ( $XML->item as $item ) {
+			$link 	= $item->link."";
+			$id		= $this->getNewsIdFromNewsUrl($link);
+			$findNews = $collection->findOne(array('newsId' => $id), array('_id' => 0));
+			$news	= array();
+			if ($findNews)
+			{
+				$news = $findNews;
+			}
+			else
+			{
+				$news['newsId'] 	= $id;
+				$news['title'] 		= $item->title."";
+				$news['link']		= $link;
+				$news['shortDesc'] 	= $item->description."";
+				$news['mobile'] 	= $item->mobile."";
+				$news['pubDate'] 	= $item->pubDate."";
+				$news['guid'] 		= $item->guid."";
+	
+				// Analyze HTML to achieve more information
+					
+				$html = file_get_html($link );
+				$news['imageUrl']	= $this->getImageUrlFromHTML($html);
+				$news['keywords']	= $this->getKeywordsFromHTML($html);
+				$news['longDesc']	= $item->description."";
+				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
+	
 				//var_dump($news);
 				$collection->insert($news);
 				array_push($this->listNews, $news);
@@ -62,7 +106,6 @@ class RSS
 			array_push($this->listNews, $news);
 		}
 	}
-	
 	/**
 	 * The 8-digit number at the end of each news' link is unique and can be considered as the ID of the article
 	 * @param string $link
@@ -83,7 +126,11 @@ class RSS
 	{
 		// <meta property="og:image" content="http://image.news.livedoor.com/newsimage/2/e/2ee22_293_9af5057d_a72bfd6f.jpg">
 		preg_match('/<meta property="og:image" content="(.*?)">/', $html, $matches);
-		return $matches[1];
+		var_dump($matches);
+		if ($matches)
+			if (count($matches) > 1)
+				return $matches[1];
+		return ""; 
 	}
 
 	/**
