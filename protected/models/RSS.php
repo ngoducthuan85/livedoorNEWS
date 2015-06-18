@@ -34,8 +34,8 @@ class RSS
 			$filter = array(
 					'id'=>$id
 			);
-			//$findNews = $db->find($filter);
-			//var_dump($findNews);
+			$findNews = $db->find($filter);
+			var_dump($findNews);
 			
 			$news				= array();
 			$news['title'] 		= $item->title;
