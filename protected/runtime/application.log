@@ -985,3 +985,170 @@ Stack trace:
 #4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
 #5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
 REQUEST_URI=/livedoorNEWS/
+2015/06/18 07:35:03 [error] [php] Undefined variable: category (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php:40)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/
+2015/06/18 07:38:23 [error] [php] Undefined variable: category (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/views/site/index.php:1)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(869): SiteController->renderFile()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(40): SiteController->render()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/
+2015/06/18 07:38:25 [error] [php] Undefined variable: category (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/views/site/index.php:1)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(869): SiteController->renderFile()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(40): SiteController->render()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/
+2015/06/18 07:39:18 [error] [php] simplexml_load_file(http://news.livedoor.com/topics/rss/52.xml): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php:21)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(56): SiteController->actionIndex()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionTopics()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/topics/category/52/
+2015/06/18 07:39:27 [error] [php] simplexml_load_file(http://news.livedoor.com/topics/rss/52.xml): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php:21)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(56): SiteController->actionIndex()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionTopics()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/topics/category/52/
+2015/06/18 07:39:45 [error] [php] simplexml_load_file(http://news.livedoor.com/topics/rss/.xml): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php:21)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(56): SiteController->actionIndex()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionTopics()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/topics/category/
+2015/06/18 07:39:54 [error] [php] simplexml_load_file(http://news.livedoor.com/topics/rss/100.xml): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php:21)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(56): SiteController->actionIndex()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionTopics()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/topics/category/100/
+2015/06/18 07:52:28 [error] [php] simplexml_load_file(http://news.livedoor.com/summay/rss/52.xml): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php:21)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(58): SiteController->actionIndex()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionTopics()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/topics/category/52/
+2015/06/18 07:52:48 [error] [php] simplexml_load_file(http://news.livedoor.com/summary/rss/52.xml): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php:21)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(58): SiteController->actionIndex()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionTopics()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/topics/category/52/
+2015/06/18 07:52:49 [error] [php] simplexml_load_file(http://news.livedoor.com/summary/rss/52.xml): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php:21)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(58): SiteController->actionIndex()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionTopics()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/topics/category/52/
+2015/06/18 07:53:06 [error] [php] simplexml_load_file(http://news.livedoor.com/summary/rss/52.xml): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php:21)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(58): SiteController->actionIndex()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionTopics()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/topics/category/52/
+2015/06/18 08:16:47 [error] [php] Undefined variable: rssPath (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/views/site/index.php:1)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(869): SiteController->renderFile()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(42): SiteController->render()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/
+2015/06/18 08:31:37 [error] [php] simplexml_load_file(): http://news.livedoor.com/topics/rss/ent.xml:318: parser error : Premature end of data in tag description line 313 (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php:22)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(50): SiteController->actionIndex()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionTopics()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/topics/category/ent/

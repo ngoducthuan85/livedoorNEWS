@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'livedoor NEWS',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -97,6 +97,7 @@ return array(
 		トレンド：trend.xml 
 		*/
 		'RSSroot'=>'http://news.livedoor.com/topics/rss/',
+		'RSSsummary'=>'http://news.livedoor.com/rss/summary/',
 		'main'=>'top',
 		'domestic'=>'dom',
 		'world'=>'int',
@@ -106,6 +107,6 @@ return array(
 		'movie'=>'52',
 		'gourmet'=>'gourmet',
 		'women'=>'love',
-		'trend'=>'100',
+		'trend'=>'trend',
 		),
 );

@@ -23,7 +23,7 @@
               <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['sports'] ?>/">スポーツ</a></div>
             </li>
             <li>
-              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/movie/category/<?php echo Yii::app()->params['movie'] ?>/">映画</a></div>
+              <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['movie'] ?>/">映画</a></div>
             </li>
             <li>
               <div class="parent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/topics/category/<?php echo Yii::app()->params['gourmet'] ?>/">グルメ</a></div>

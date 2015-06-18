@@ -11,6 +11,7 @@ class RSS
 {
 	public $url;
 	public $listNews;
+	public $title;
 	
 	/**
  	* 
@@ -20,6 +21,7 @@ class RSS
 	{
 		$XML = simplexml_load_file ( $rssPath );
 		$XML = $XML->channel;
+		$this->title = $XML->title;
 		
 		$this->listNews = array();
 		foreach ( $XML->item as $news ) {

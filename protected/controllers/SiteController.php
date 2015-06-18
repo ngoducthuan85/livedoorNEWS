@@ -30,23 +30,44 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		//$category=null;
-		$category=Yii::app()->params['main'];
+		$rssPath = Yii::app()->params['RSSroot'] . Yii::app()->params['main'] . ".xml";
+		
 		if(isset($_GET['category']))
 		{
-			$category=Yii::app()->params['RSSroot'].$_GET['category'].".xml";
+			$rssPath = Yii::app()->params['RSSroot'] . $_GET['category'] . ".xml";
+			if ($_GET['category'] == Yii::app()->params['movie'])
+				$rssPath = Yii::app()->params['RSSsummary'] . $_GET['category'] . ".xml";
 		}
-		$this->render('index', array('category'=>$category));
+		$RSS = new RSS($rssPath);
+		$this->render('index', array('title' => $RSS->title, 'listNews' => $RSS->listNews));
 	}
 
+	/**
+	 * This is the action to choose topic
+	 */
 	public function actionTopics()
 	{
-		$category=null;
+		$this->actionIndex();
+	}
+	
+	/**
+	 * This is the action to select list of movie news
+	 */
+	public function actionMovie()
+	{
 		if(isset($_GET['category']))
 		{
-			$category=Yii::app()->params['RSSroot'].$_GET['category'].".xml";
+			if ($_GET['category'] == Yii::app()->params['movie'])
+			{
+				$rssPath = Yii::app()->params['RSSsummary'] . $_GET['category'] . ".xml";
+				$RSS = new RSS($rssPath);
+				$this->render('movie', array('title' => $RSS->title, 'listNews' => $RSS->listNews));
+				return;
+			}
 		}
-		$this->render('index', array('category'=>$category));
+		$this->actionIndex();
 	}
+	
 	/**
 	 * This is the action to handle external exceptions.
 	 */
