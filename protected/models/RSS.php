@@ -87,6 +87,7 @@ class RSS
 		var_dump($matches);
 		foreach ($matches as $url)
 		{
+			var_dump($url);
 			if (strlen($url) > 10)
 				return $this->standardizeddUrl($url);
 		}
