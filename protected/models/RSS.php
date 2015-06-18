@@ -32,13 +32,16 @@ class RSS
 			$link 	= $item->link."";
 			$id		= $this->getNewsIdFromNewsUrl($link);
 			$id		= $id."";
+			/*
 			$filter = array(
 					'newsId' => $id
 			);
-			$findNews = $collection->findOne($filter);
+			*/
+			//$findNews = $collection->findOne($filter);
+			$findNews = $collection->findOne(array('newsId' => $id), array('_id' => 0));
 			if ($findNews)
 			{
-				$news				= $findNews;
+				$news = $findNews;
 				array_push($this->listNews, $news);
 			}
 			else
@@ -107,10 +110,10 @@ class RSS
 	
 	/**
 	 * Get image url from meta tag gotten by parsing HTML
-	 * Almost all resulted URLs look like:
-	 * http://image.news.livedoor.com/newsimage/1/8/180ed_103_f14303a72a392b4cd8ba34d4ba5c780a.jpg">
-	 * The last 2 characters are redundant
-	 * @param unknown $url
+	 * The resulted URLs look like:
+	 * <meta property="og:image" content="http://image.news.livedoor.com/newsimage/7/1/7139e_130_2011032304_01.jpg"> <meta property="og:image:width" content="400"
+	 * 
+	 * @param string $url
 	 */
 	public function getImageUrlFromMetaTag($str)
 	{
