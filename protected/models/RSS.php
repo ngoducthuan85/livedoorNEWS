@@ -51,7 +51,7 @@ class RSS
 			
  				$html = file_get_html($link );
  				$news['imageUrl']	= $this->getImageUrlFromHTML($html);
-// 				$news['keywords']	= $this->getKeywordsFromNewsUrl($link);
+ 				$news['keywords']	= $this->getKeywordsFromHTML($html);
  				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
 				
 				var_dump($news);
@@ -81,8 +81,20 @@ class RSS
 	 */
 	public function getImageUrlFromHTML($html)
 	{
-		preg_match('/<meta property="og:image" content="(.*?)" \/>/', $html, $matches);
-		return $this->getImageUrlFromMetaTag($matches[0]);
+		preg_match('/<meta property="og:image" content="(.*?)">/', $html, $matches);
+		return $this->$matches[1];
+	}
+
+	/**
+	 *
+	 * @param string $html
+	 * @return URL of the image in the article
+	 */
+	public function getKeywordsFromHTML($html)
+	{
+		// <meta name="keywords" content="社会,トヨタの女性役員逮捕,密輸,麻薬,厚生労働省,トヨタ自動車,国内の事件・事故,ニュース">
+		preg_match('/<meta name="keywords"" content="(*?)" \/>/', $html, $matches);
+		return $matches[1];
 	}
 	
 	/**
@@ -105,7 +117,7 @@ class RSS
 	/**
 	 * Get image url from meta tag gotten by parsing HTML
 	 * The resulted URLs look like:
-	 * <meta property="og:image" content="http://image.news.livedoor.com/newsimage/7/1/7139e_130_2011032304_01.jpg"> <meta property="og:image:width" content="400"
+	 * <meta property="og:image" content="http://image.news.livedoor.com/newsimage/7/1/7139e_130_2011032304_01.jpg"> <meta property="og:image:width" content="400"/>
 	 * 
 	 * @param string $url
 	 */
