@@ -21,7 +21,7 @@ class RSS
 	{
 		$m          = new MongoClient('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
 		$db         = $m->selectDB('livedoor');
-		$collection = $db->selectCollection('news');
+		$collection = $db->news;
 		
 		$XML = simplexml_load_file ( $rssPath );
 		$XML = $XML->channel;
@@ -34,10 +34,17 @@ class RSS
 			$filter = array(
 					'id'=>$id
 			);
-			$findNews = $db.news.findOne($filter);
+			$findNews = $collection.findOne($filter);
 			if ($findNews)
 			{
-				print_r(tojson($findNews));
+				$news				= array();
+				$news['id'] 		= $id;
+				$news['title'] 		= tojson($findNews);
+				$news['link']		= $link;
+				$news['shortDesc'] 	= $item->description;
+				$news['mobile'] 	= $item->mobile;
+				$news['pubDate'] 	= $item->pubDate;
+				$news['guid'] 		= $item->guid;
 			}
 			else
 			{ 			
