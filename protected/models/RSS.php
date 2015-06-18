@@ -35,12 +35,11 @@ class RSS
 					'id'=>$id
 			);
 			$findNews = $collection->findOne($filter);
-			//$findNews = null;
 			if ($findNews)
 			{
 				$news				= array();
 				$news['id'] 		= $id;
-				$news['title'] 		= tojson($findNews);
+				$news['title'] 		= $id;
 				$news['link']		= $link;
 				$news['shortDesc'] 	= $item->description;
 				$news['mobile'] 	= $item->mobile;
