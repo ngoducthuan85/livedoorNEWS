@@ -2032,3 +2032,18 @@ Stack trace:
 #9 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
 #10 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
 REQUEST_URI=/livedoorNEWS/
+2015/06/18 23:11:17 [error] [exception.MongoConnectionException] exception 'MongoConnectionException' with message 'Failed to connect to: ds045242.mongolab.com:45242: Operation timed out' in /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php:65
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/RSS.php(65): MongoClient->__construct('mongodb://ngodu...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(41): RSS->__construct('http://news.liv...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): CController->run('')
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#9 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/livedoorNEWS/
+---
