@@ -38,6 +38,7 @@ class RSS
 			if ($findNews)
 			{
 				$news				= $findNews;
+				array_push($this->listNews, $news);
 			}
 			else
 			{ 						
