@@ -31,8 +31,9 @@ class RSS
 		foreach ( $XML->item as $item ) {
 			$link 	= $item->link."";
 			$id		= $this->getNewsIdFromNewsUrl($link);
+			var_dump($id);
 			$filter = array(
-					'newsId' => "10247366"
+					'newsId' => $id
 			);
 			$findNews = $collection->findOne($filter);
 			if ($findNews)
