@@ -93,7 +93,7 @@ class RSS
 	public function getKeywordsFromHTML($html)
 	{
 		// <meta name="keywords" content="社会,トヨタの女性役員逮捕,密輸,麻薬,厚生労働省,トヨタ自動車,国内の事件・事故,ニュース">
-		preg_match('/<meta name="keywords"" content="(*?)" \/>/', $html, $matches);
+		preg_match('/<meta name="keywords"" content="(.*?)" \/>/', $html, $matches);
 		return $matches[1];
 	}
 	
