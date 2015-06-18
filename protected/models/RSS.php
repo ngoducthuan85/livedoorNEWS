@@ -53,9 +53,9 @@ class RSS
 				// Analyze HTML to achieve more information
 			
  				$html = file_get_html($link );
-// 				$news['imageUrl']	= $this->getImageUrlFromHTML($html);
+ 				$news['imageUrl']	= $this->getImageUrlFromHTML($html);
 // 				$news['keywords']	= $this->getKeywordsFromNewsUrl($link);
-// 				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
+ 				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
 				
 				var_dump($news);
 				$collection->insert($news);
