@@ -20,7 +20,7 @@ class RSS
 	function __construct($rssPath)
 	{
 		$m          = new MongoClient('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
-		$db         = $m->selectDB('livedoor');
+		$db         = $m->livedoor;
 		$collection = $db->news;
 		
 		$XML = simplexml_load_file ( $rssPath );
@@ -32,9 +32,9 @@ class RSS
 			$link 	= $item->link;
 			$id		= $this->getNewsIdFromNewsUrl($link);
 			$filter = array(
-					'id'=>$id
+					'id' => $id
 			);
-			//$findNews = $collection->findOne($filter);
+			$findNews = $collection->findOne($filter);
 			$findNews=null;
 			if ($findNews)
 			{
