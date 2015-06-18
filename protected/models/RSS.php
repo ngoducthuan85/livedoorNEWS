@@ -19,9 +19,9 @@ class RSS
  	*/
 	function __construct($rssPath)
 	{
-		//$m          = new Mongo('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
-		//$db         = $m->selectDB('livedoor');
-		//$collection = $db->selectCollection('news');
+		$m          = new Mongo('mongodb://ngoducthuan85:ngoducthuan85@ds045242.mongolab.com:45242/livedoor'); // connect
+		$db         = $m->selectDB('livedoor');
+		$collection = $db->selectCollection('news');
 		
 		$XML = simplexml_load_file ( $rssPath );
 		$XML = $XML->channel;
