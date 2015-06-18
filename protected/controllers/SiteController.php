@@ -87,10 +87,12 @@ class SiteController extends Controller
 	 */
 	public function actionArticle()
 	{
+		$title = "";
+		$description = "";
 		if(isset($_GET['detail']))
 		{
 
 		}
-		$this->render('article', array('title' => $RSS->title, 'listNews' => $RSS->listNews));
+		$this->render('article', array('title' => $title, 'description' => $description));
 	}
 }

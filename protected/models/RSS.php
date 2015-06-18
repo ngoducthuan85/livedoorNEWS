@@ -79,7 +79,6 @@ class RSS
 			if ($findNews)
 			{
 				$news = $findNews;
-				array_push($this->listNews, $news);
 			}
 			else
 			{
@@ -92,20 +91,15 @@ class RSS
 				$news['guid'] 		= $item->guid."";
 	
 				// Analyze HTML to achieve more information
-					
 				$html = file_get_html($link );
 				$news['imageUrl']	= $this->getImageUrlFromHTML($html);
-				$news['keywords']	= "";
 				$news['keywords']	= $this->getKeywordsFromHTML($html);
-				$news['longDesc']	= $item->description."";
-				$news['relatedPosts']= $this->getRelatedPostsFrom($html, $news['keywords']);
+				$news['relatedPosts']= $this->getRelatedPostsFromHTMLandKeywords($html, $news['keywords']);
 	
 				//var_dump($news);
 				$collection->insert($news);
-				array_push($this->listNews, $news);
-				break;
 			}
-			//array_push($this->listNews, $news);
+			array_push($this->listNews, $news);
 		}
 	}
 	/**
@@ -113,7 +107,7 @@ class RSS
 	 * @param string $link
 	 * @return ID of the article
 	 */
-	public function getNewsIdFromNewsUrl($link)
+	public static function getNewsIdFromNewsUrl($link)
 	{
 		$id = substr($link, -9, 8);
 		return $id;
@@ -124,7 +118,7 @@ class RSS
 	 * @param string $html
 	 * @return URL of the image in the article
 	 */
-	public function getImageUrlFromHTML($html)
+	public static function getImageUrlFromHTML($html)
 	{
 		// <meta property="og:image" content="http://image.news.livedoor.com/newsimage/2/e/2ee22_293_9af5057d_a72bfd6f.jpg">
 		preg_match('/<meta property="og:image" content="(.*?)">/', $html, $matches);
@@ -139,11 +133,10 @@ class RSS
 	 * @param string $html
 	 * @return keywords of the news
 	 */
-	public function getKeywordsFromHTML($html)
+	public static function getKeywordsFromHTML($html)
 	{
 		// <meta name="news_keywords" content="社会,トヨタの女性役員逮捕,密輸,麻薬,厚生労働省,トヨタ自動車,国内の事件・事故,ニュース">
 		return "社会,トヨタの女性役員逮捕,密輸,麻薬,厚生労働省,トヨタ自動車,国内の事件・事故,ニュース";
-		//return "·ÝÇ½Áí¹ç,ASIAN KUNG-FU GENERATION,À¯¼£²È,±ê¾å¡¦ÈãÈ½,·ÝÇ½¥Ë¥å¡¼¥¹";
 		preg_match('/<meta name="news_keywords" content="(.*?)">/', $html, $matches);
 		if ($matches)
 			if (count($matches) > 1)
@@ -151,22 +144,15 @@ class RSS
 		return ""; 
 	}
 	
-	/**
-	 *
-	 * @param string $html
-	 * @return URL of the image in the article
-	 */
-	public function getLongDescFromHTML($html)
-	{
-		// <meta property="og:image" content="http://image.news.livedoor.com/newsimage/2/e/2ee22_293_9af5057d_a72bfd6f.jpg">
-		preg_match('/<meta property="og:image" content="(.*?)">/', $html, $matches);
-		if ($matches)
-			if (count($matches) > 1)
-				return $matches[1];
-			return "";
-	}
 	
-	public function getRelatedPostsFrom($html, $keywords)
+	/**
+	 * Find the related post keywords of the articles.
+	 * If any article already have some related posts from outside, use them instead of finding in the database
+	 * @param unknown $html
+	 * @param unknown $keywords
+	 * @return multitype:
+	 */
+	public static function getRelatedPostsFromHTMLandKeywords($html, $keywords)
 	{
 		return array();
 	}
