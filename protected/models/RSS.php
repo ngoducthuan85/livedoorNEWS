@@ -31,19 +31,11 @@ class RSS
 		foreach ( $XML->item as $item ) {
 			$link 	= $item->link."";
 			$id		= $this->getNewsIdFromNewsUrl($link);
-			$id		= $id."";
-			/*
-			$filter = array(
-					'newsId' => $id
-			);
-			*/
-			//$findNews = $collection->findOne($filter);
 			$findNews = $collection->findOne(array('newsId' => $id), array('_id' => 0));
 			$news	= array();
 			if ($findNews)
 			{
 				$news = $findNews;
-				array_push($this->listNews, $news);
 			}
 			else
 			{ 						
@@ -64,6 +56,7 @@ class RSS
 				
 				var_dump($news);
 				$collection->insert($news);
+				array_push($this->listNews, $news);
 				break;
 			}
 			array_push($this->listNews, $news);
