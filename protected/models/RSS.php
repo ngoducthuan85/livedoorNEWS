@@ -142,7 +142,7 @@ class RSS
 	public function getKeywordsFromHTML($html)
 	{
 		// <meta name="news_keywords" content="社会,トヨタの女性役員逮捕,密輸,麻薬,厚生労働省,トヨタ自動車,国内の事件・事故,ニュース">
-		//return "社会,トヨタの女性役員逮捕,密輸,麻薬,厚生労働省,トヨタ自動車,国内の事件・事故,ニュース";
+		return "社会,トヨタの女性役員逮捕,密輸,麻薬,厚生労働省,トヨタ自動車,国内の事件・事故,ニュース";
 		//return "·ÝÇ½Áí¹ç,ASIAN KUNG-FU GENERATION,À¯¼£²È,±ê¾å¡¦ÈãÈ½,·ÝÇ½¥Ë¥å¡¼¥¹";
 		preg_match('/<meta name="news_keywords" content="(.*?)">/', $html, $matches);
 		if ($matches)
