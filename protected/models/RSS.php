@@ -41,9 +41,8 @@ class RSS
 			}
 			else
 			{ 			
-				$news				= array();
 				$news['id'] 		= $id;
-				$news['title'] 		= $item->title;
+				$news['title'] 		= $item->title[0];
 				$news['link']		= $link;
 				$news['shortDesc'] 	= $item->description;
 				$news['mobile'] 	= $item->mobile;
