@@ -85,17 +85,7 @@ class RSS
 	public function getImageUrlFromHTML($html)
 	{
 		preg_match('/<meta property="og:image" content="(.*?)" \/>/', $html, $matches);
-		return $this->standardizedUrl($matches[1]);
-		/*
-		echo $matches;
-		foreach ($matches as $url)
-		{
-			echo $url;
-			if (strlen($url) > 10)
-				return $this->standardizeddUrl($url);
-		}
-		return null;
-		*/
+		return $this->getImageUrlFromMetaTag($matches[0]);
 	}
 	
 	/**
@@ -116,19 +106,18 @@ class RSS
 	}
 	
 	/**
-	 * Standardize the URLs gotten by parsing HTML
+	 * Get image url from meta tag gotten by parsing HTML
 	 * Almost all resulted URLs look like:
 	 * http://image.news.livedoor.com/newsimage/1/8/180ed_103_f14303a72a392b4cd8ba34d4ba5c780a.jpg">
 	 * The last 2 characters are redundant
 	 * @param unknown $url
 	 */
-	public function standardizedUrl($url)
+	public function getImageUrlFromMetaTag($str)
 	{
-		/*
-		if (strcmp(substr($url, -2), "\">"))
-			$url = substr($url, 0, -2);
-		return $url;
-		*/
+		$start 	= strpos($str, "content=") + 8;
+		$end 	= strpos($str, "> <")-2;
+		$url 	= substr($str, $start, $end-$start+1);
+		var_dump($url);
 		return substr($url, 0, -2);
 	}
 }
