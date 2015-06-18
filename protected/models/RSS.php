@@ -114,10 +114,9 @@ class RSS
 	 */
 	public function getImageUrlFromMetaTag($str)
 	{
-		$start 	= strpos($str, "content=") + 8;
+		$start 	= strpos($str, "content=") + 9;
 		$end 	= strpos($str, "> <")-2;
 		$url 	= substr($str, $start, $end-$start+1);
-		var_dump($url);
-		return substr($url, 0, -2);
+		return $url;
 	}
 }
