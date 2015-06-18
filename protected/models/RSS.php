@@ -25,7 +25,7 @@ class RSS
 		
 		$XML = simplexml_load_file ( $rssPath );
 		$XML = $XML->channel;
-		$this->title = $XML->title-->toString();
+		$this->title = $XML->title->toString();
 		
 		$this->listNews = array();
 		foreach ( $XML->item as $item ) {
