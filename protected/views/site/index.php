@@ -49,7 +49,7 @@
           <ul class="articleList">
           	<?php foreach ($listNews as $news):?>
 			<li class="hasImg">
-			  <a href="<?php echo Yii::app()->request->baseUrl . "/site/article/detail/" . $news['id']; ?>">
+			  <a href="<?php echo Yii::app()->request->baseUrl . "/site/article/detail/" . $news['newsId']; ?>">
 			      <p class="articleListImg">
 			      	<img src="<?php echo $news->imageUrl; ?>" alt="" onmousedown="return false;" onselectstart="return false;" oncontextmenu="return false;" galleryimg="no">
 			      </p>

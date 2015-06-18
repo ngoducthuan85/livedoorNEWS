@@ -40,14 +40,15 @@ class RSS
 				$news				= $findNews;
 			}
 			else
-			{ 			
-				$news['id'] 		= $id;
+			{ 						
+				$news['newsId'] 	= $id;
 				$news['title'] 		= $item->title;
 				$news['link']		= $link;
 				$news['shortDesc'] 	= $item->description;
 				$news['mobile'] 	= $item->mobile;
 				$news['pubDate'] 	= $item->pubDate;
 				$news['guid'] 		= $item->guid;
+				var_dump($news);
 				$collection->insert($news);
 				break;
 			}
