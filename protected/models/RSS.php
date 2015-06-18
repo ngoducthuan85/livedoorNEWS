@@ -84,10 +84,10 @@ class RSS
 	public function getImageUrlFromHTML($html)
 	{
 		preg_match('/<meta property="og:image" content="(.*?)" \/>/', $html, $matches);
-		var_dump($matches);
+		echo $matches;
 		foreach ($matches as $url)
 		{
-			var_dump($url);
+			echo $url;
 			if (strlen($url) > 10)
 				return $this->standardizeddUrl($url);
 		}
