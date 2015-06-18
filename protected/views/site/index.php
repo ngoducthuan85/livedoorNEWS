@@ -49,14 +49,14 @@
           <ul class="articleList">
           	<?php foreach ($listNews as $news):?>
 			<li class="hasImg">
-			  <a href="<?php echo Yii::app()->request->baseUrl . "/site/article/detail/" . $news->id; ?>">
+			  <a href="<?php echo Yii::app()->request->baseUrl . "/site/article/detail/" . $news['id']; ?>">
 			      <p class="articleListImg">
 			      	<img src="<?php echo $news->imageUrl; ?>" alt="" onmousedown="return false;" onselectstart="return false;" oncontextmenu="return false;" galleryimg="no">
 			      </p>
 			    <div class="articleListBody">
-			      <h3 class="articleListTtl"><?php echo $news->title;?></h3>
-			        <p class="articleListSummary"><?php echo $news->shortDesc;?></p>
-			      <time datetime="<?php echo $news->pubDate;?>" class="articleListDate"><?php echo $news->pubDate;?></time>
+			      <h3 class="articleListTtl"><?php echo $news['title'];?></h3>
+			        <p class="articleListSummary"><?php echo $news['shortDesc'];?></p>
+			      <time datetime="<?php echo $news->pubDate;?>" class="articleListDate"><?php echo $news['pubDate'];?></time>
 			    </div>
 			  </a>
 			</li>

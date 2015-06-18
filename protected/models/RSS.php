@@ -34,17 +34,18 @@ class RSS
 			$filter = array(
 					'id'=>$id
 			);
-			$findNews = $db->find($filter);
-			var_dump($findNews);
-			
-			$news				= array();
-			$news['title'] 		= $item->title;
-			$news['link']		= $item->link;
-			$news['shortDesc'] 	= $item->description;
-			$news['mobile'] 	= $item->mobile;
-			$news['pubDate'] 	= $item->pubDate;
-			$news['guid'] 		= $item->guid;
-			
+			$findNews = $db.news.findOne($filter);
+			if (!$findNews)
+			{ 			
+				$news				= array();
+				$news['id'] 		= $id;
+				$news['title'] 		= $item->title;
+				$news['link']		= $link;
+				$news['shortDesc'] 	= $item->description;
+				$news['mobile'] 	= $item->mobile;
+				$news['pubDate'] 	= $item->pubDate;
+				$news['guid'] 		= $item->guid;
+			}
 			array_push($this->listNews, $news);
 		}
 	}
