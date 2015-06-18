@@ -5,7 +5,7 @@
  * @final 2015/6/18
  */
 
-require_once 'News.php';
+require_once 'simple_html_dom.php';
 
 class RSS
 {
