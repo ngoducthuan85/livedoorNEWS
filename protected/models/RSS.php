@@ -84,7 +84,7 @@ class RSS
 	public function getImageUrlFromHTML($html)
 	{
 		preg_match('/<meta property="og:image" content="(.*?)" \/>/', $html, $matches);
-		return $this->standardizeddUrl($matches[1]);
+		return $this->standardizedUrl($matches[1]);
 		/*
 		echo $matches;
 		foreach ($matches as $url)
@@ -121,10 +121,13 @@ class RSS
 	 * The last 2 characters are redundant
 	 * @param unknown $url
 	 */
-	public function standardizeddUrl($url)
+	public function standardizedUrl($url)
 	{
+		/*
 		if (strcmp(substr($url, -2), "\">"))
 			$url = substr($url, 0, -2);
 		return $url;
+		*/
+		return substr($url, 0, -2);
 	}
 }
