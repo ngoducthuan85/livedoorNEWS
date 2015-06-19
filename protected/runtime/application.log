@@ -2088,3 +2088,25 @@ Stack trace:
 #6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
 #7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
 REQUEST_URI=/livedoorNEWS/site/article/detail/10248050
+2015/06/19 01:57:47 [error] [php] file_get_contents(
+    ざっくり言うと
+    &lt;br /&gt;
+      &lt;ul&gt;
+        &lt;li&gt;気づかないうちについている洋服のシミ抜きテクニックを紹介している&lt;/li&gt;
+        &lt;li&gt;赤ワインのシミは食器用洗剤を2倍に薄めた水をつけた歯ブラシで叩く&lt;/li&gt;
+        &lt;li&gt;クレヨンやボールペンのシミは綿棒にクレンジングオイルを含ませて叩くなど&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;a href=&quot;http://news.livedoor.com/article/detail/10248878/&quot;&gt;記事を読む&lt;/a&gt;
+    ): failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/models/simple_html_dom.php:76)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(39): RSS->__construct()
+#1 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/protected/controllers/SiteController.php(48): SiteController->actionIndex()
+#2 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/actions/CInlineAction.php(49): SiteController->actionTopics()
+#3 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(286): SiteController->runAction()
+#5 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#9 /Applications/XAMPP/xamppfiles/htdocs/livedoorNEWS/index.php(13): CWebApplication->run()
+REQUEST_URI=/livedoorNEWS/site/topics/category/trend/

@@ -227,3 +227,124 @@ div.search-form
 {
 	background: #80CFFF;
 }
+#nav {
+    width: 120px;
+    float: left;
+    padding-left: 30px;
+}
+
+#globalNav {
+    position: absolute;
+    top: 0px;
+    width: 120px;
+    min-height: 465px;
+    padding-top: 35px;
+}
+
+nav, ol, ul {
+    list-style: outside none none;
+}
+
+#globalNav ul li {
+    font-size: 13px;
+}
+
+#globalNav ul li .parent, #globalNav ul li .child li {
+    height: 28px;
+    line-height: 28px;
+}
+
+#globalNav ul li a {
+    color: #000;
+    white-space: nowrap;
+    display: block;
+    height: 28px;
+    padding: 0px 10px;
+    font-weight: bold;
+}
+a:link {
+    color: #2355A5;
+    text-decoration: none;
+}
+a {
+    cursor: pointer;
+}
+#globalNav ul li .parent, #globalNav ul li .child li {
+    line-height: 28px;
+}
+
+#main {
+    width: 700px;
+    float: left;
+    background: #FFF none repeat scroll 0% 0%;
+}
+
+#main .mainInner {
+    margin: 40px 0px;
+}
+
+.mainSec {
+    margin: 0px 40px 30px;
+}
+.mainHeader {
+    position: relative;
+}
+
+#page-topics_category .mainTtl, #page-staraight_news .mainTtl, #page-ranking .mainTtl {
+    margin-bottom: 10px;
+}
+.mainTtl {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.articleList {
+    font-size: 14px;
+}
+
+p articleListSummary {
+	display:none;
+}
+.articleListBody a {
+	display:none;
+}
+
+.articleList li a {
+	display: block;
+	text-decoration: none;
+	overflow: hidden;
+	padding: 10px 0px;
+	min-height: 80px;
+}
+
+a:link {
+    color: #2355A5;
+    text-decoration: none;
+}
+a {
+    cursor: pointer;
+}
+
+.articleList li .articleListImg {
+    float: left;
+    width: 80px;
+}
+
+.articleListImg img{
+    float: left;
+    width: 80px;
+}
+
+.articleList li .articleListTtl {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    line-height: 22px;
+    margin-left: 100px;
+}
+
+.hasImg a:focus, hover{
+	
+}

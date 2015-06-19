@@ -55,8 +55,10 @@
 			      </p>
 			    <div class="articleListBody">
 			      <h3 class="articleListTtl"><?php echo $news['title'];?></h3>
-			        <p class="articleListSummary"><?php echo $news['shortDesc'];?></p>
+			      <!--
+			      <p class="articleListSummary"><?php echo $news['shortDesc'];?></p>
 			      <time datetime="<?php echo $news['pubDate'];?>" class="articleListDate"><?php echo $news['pubDate'];?></time>
+			      -->
 			    </div>
 			  </a>
 			</li>
